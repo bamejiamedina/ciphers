@@ -7,10 +7,10 @@ class Caesar_Cipher():
     message = message.upper()
     print("Enter the encryption key (any number between 0 and 25):")
     key = int(input())
-    if (key < 0):   #if the key is below 0, it is set to 0
-      key = 0
-    if (key > 25):     #if the key is over 25, it is set to 25
-      key = 25
+    while (key < 0):   #if the key is below 0, it is increased by 26 until it is within 0 and 26
+      key += 26
+    while (key > 26):     #if the key is over 26, it is reduced by 26 until it is within 0 and 26
+      key -= 26
     translated = ""
     for letter in message:
       if letter in all_letters:
@@ -32,10 +32,10 @@ class Caesar_Cipher():
     message = message.upper()
     print("Enter the decryption key (same as encryption key):")
     key = int(input())
-    if (key < 0):   #if the key is below 0, it is set to 0
-      key = 0
-    if (key > 25):     #if the key is over 25, it is set to 25
-      key = 25
+    while (key < 0):   #if the key is below 0, it is increased by 26 until it is within 0 and 26
+      key += 26
+    while (key > 26):     #if the key is over 26, it is reduced by 26 until it is within 0 and 26
+      key -= 26
     translated = ""
     for letter in message:
       if letter in all_letters:
